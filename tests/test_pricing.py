@@ -22,6 +22,20 @@ def test_bulk_price():
     assert bulk_price(100, 2) == 200
 
 
+def test_bulk_price_no_discount_below_10():
+    assert bulk_price(100, 9) == 900
+
+
+def test_bulk_price_ten_percent_tier():
+    assert bulk_price(100, 10) == 900
+    assert bulk_price(100, 49) == 4410
+
+
+def test_bulk_price_twenty_percent_tier():
+    assert bulk_price(100, 50) == 4000
+    assert bulk_price(100, 100) == 8000
+
+
 @pytest.mark.django_db
 def test_product_str():
     from shop.models import Product
