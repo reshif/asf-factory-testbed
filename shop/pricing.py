@@ -13,8 +13,10 @@ def is_free(price_cents: int) -> bool:
 
 
 def bulk_price(unit_cents: int, quantity: int) -> int:
-    """Price for a quantity; 10+ items get 10% off."""
+    """Price for a quantity; 10-49 items get 10% off, 50+ get 20% off."""
     total = unit_cents * quantity
-    if quantity >= 10:
+    if quantity >= 50:
+        total = apply_discount(total, 20)
+    elif quantity >= 10:
         total = apply_discount(total, 10)
     return total
