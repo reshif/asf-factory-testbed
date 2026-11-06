@@ -13,7 +13,7 @@ from shop.pricing import apply_discount, bulk_price, is_free
     "price,percent,expected",
     [(1000, 0, 1000), (1000, 10, 900), (1000, 100, 0), (999, 10, 900), (1, 50, 1)],
 )
-def test_discount_is_rounded_down_in_customers_favour_of_the_shop(price, percent, expected):
+def test_discount_amount_is_rounded_down(price, percent, expected):
     assert apply_discount(price, percent) == expected
 
 
