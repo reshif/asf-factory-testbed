@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "lock_version": 1,
+  "item_id": "00000000-0000-4000-8000-000000000000",
+  "unit_id": "00000000-0000-4000-8000-000000000000",
+  "base_sha": "793a221006756d859158b3b22ecdc36bd5a1ae23",
+  "entries": [
+    {
+      "path": "tests/acceptance/__init__.py",
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "role": "oracle"
+    },
+    {
+      "path": "tests/acceptance/test_pricing_acceptance.py",
+      "sha256": "sha256:549c61078e1cfd2bf8c6095d51e77b39294d3b41e6054d094899ef9a4a4f91b3",
+      "git_blob_sha": "737b5957137e0ccc95f0fa0fce4e61a66016d89e",
+      "role": "oracle"
+    }
+  ],
+  "created_at": "2026-11-06T20:58:54Z",
+  "lock_hash": "sha256:8b82b2e63d6f244a4e5f6037bb75514a9d3b28aafdf932a7d34c17d6da69039f",
+  "signature": {
+    "key_id": "dev:oracle-lock/1",
+    "alg": "EdDSA",
+    "value": "ebVsvUfOHHxGNMx7B1vaV3gdln8F7RKxJ9Usnk8+4b4P1xbaVkuKc69IUagXsT5ZlgPNIwP6PnjZO2w2no3lDw=="
+  }
+}
