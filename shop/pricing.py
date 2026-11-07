@@ -20,3 +20,12 @@ def bulk_price(unit_cents: int, quantity: int) -> int:
     elif quantity >= 10:
         total = apply_discount(total, 10)
     return total
+
+
+def shipping_cents(order_total_cents: int) -> int:
+    """Shipping fee: free for orders of 5000 cents or more, else flat 499."""
+    if order_total_cents < 0:
+        raise ValueError("order total must not be negative")
+    if order_total_cents >= 5000:
+        return 0
+    return 499

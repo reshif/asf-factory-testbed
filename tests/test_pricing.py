@@ -1,6 +1,6 @@
 import pytest
 
-from shop.pricing import apply_discount, bulk_price, is_free
+from shop.pricing import apply_discount, bulk_price, is_free, shipping_cents
 
 
 def test_discount_basic():
@@ -27,3 +27,15 @@ def test_product_str():
     from shop.models import Product
 
     assert str(Product.objects.create(name="pen", price_cents=3)) == "pen"
+
+
+@pytest.mark.parametrize(
+    "total,expected", [(0, 499), (4999, 499), (5000, 0), (1_000_000, 0)]
+)
+def test_shipping_cents(total, expected):
+    assert shipping_cents(total) == expected
+
+
+def test_shipping_cents_negative():
+    with pytest.raises(ValueError):
+        shipping_cents(-1)
