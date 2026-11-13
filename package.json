@@ -1,0 +1,7 @@
+{
+  "name": "asf-factory-testbed",
+  "private": true,
+  "scripts": {
+    "test": "python3 -m pytest -q -p no:cacheprovider -m \"not django_db\""
+  }
+}
